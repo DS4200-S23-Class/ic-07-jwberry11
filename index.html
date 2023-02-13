@@ -7,7 +7,34 @@
 
 
 <body>
-
+    <title> ic-07 </title>
+    <h2> D3 Part 1 </h2>
+    <script src="../ic-07-jwberry11/d3.v6.1.1/d3.js"></script>
+    <script>
+        var width = 600,
+            height = 200;
+    
+        var data = [55000, 48000, 27000, 66000, 90000];
+        //build SVG
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+        var s = d3.scaleLinear()
+                      .domain([d3.min(data), d3.max(data)])
+                      .range([0, width - 100]);
+        // Add scales to axis then append to SVG
+        var axis = d3.axisBottom()
+                       .scale(s);
+                       
+        svg.append("g")
+           .call(axis);
+    </script>
+    <h2> Acknowledgements </h2>
+    <ul>
+        <li> https://www.tutorialsteacher.com/d3js/axes-in-d3 </li>
+        <li> https://d3-graph-gallery.com/intro_d3js.html</li>
+    </ul>
 
 </body>
 
